@@ -1,10 +1,11 @@
-递归:
-	树的操作一般是用递归:
-		1.节点的定义
-		2.重复性
-	本质
-		循环:通过函数体来进行的循环
-	模版（go）
+	递归:
+		树的操作一般是用递归:
+			1.节点的定义
+			2.重复性
+		本质
+			循环:通过函数体来进行的循环
+		模版（go）
+	```go
 		func recursion(level int, p1 int, p2 int, ...) {
 			// recursion terminator 递归终极条件
 			if level > MAX_LEVEL {
@@ -20,6 +21,7 @@
 
 			// reverse the current level status if needed 清扫当前层
 		}
+	```
 	思维要点
 		1：不要人肉进行递归（最大误区）
 		2：找到最近最简方法，将其拆解成可重复解决的问题（重复子问题）
