@@ -2,10 +2,8 @@
 		树的操作一般是用递归:
 			1.节点的定义
 			2.重复性
-		本质
-			循环:通过函数体来进行的循环
+		本质: 通过函数体来进行的循环
 		模版（go）
-	
 		func recursion(level int, p1 int, p2 int, ...) {
 			// recursion terminator 递归终极条件
 			if level > MAX_LEVEL {
