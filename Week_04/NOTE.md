@@ -9,9 +9,7 @@
 		    if node in visited: # terminator
 		    	# already visited 
 		    	return 
-
 			visited.add(node) 
-
 			# process current node here. 
 			...
 			for next_node in node.children(): 
@@ -32,30 +30,24 @@
 			if tree.root is None: 
 				return [] 
 			visited, stack = [], [tree.root]
-
 			while stack: 
 				node = stack.pop() 
 				visited.add(node)
-
 				process (node) 
 				nodes = generate_related_nodes(node) 
 				stack.push(nodes) 
-
 			# other processing work 
 		bfs:
 			def BFS(graph, start, end):
 			    visited = set()
 				queue = [] 
 				queue.append([start]) 
-
 				while queue: 
 					node = queue.pop() 
 					visited.add(node)
-
 					process(node) 
 					nodes = generate_related_nodes(node) 
 					queue.push(nodes)
-
 				# other processing work 
 				...
 			}
