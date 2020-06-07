@@ -1,3 +1,4 @@
+// 时间复杂度为O(1) 空间复杂度O(1)
 func numOfBurgers(tomatoSlices int, cheeseSlices int) []int {
     // 4x + 2y = tomatoSlices   x = (tomatoSlices - 2cheeseSlices)/2
     // 2x + 2y = 2cheeseSlices  y = cheeseSlices - x

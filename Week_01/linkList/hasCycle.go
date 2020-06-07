@@ -1,5 +1,5 @@
 /**
- * 141. 环形链表 hash解法
+ * 141. 环形链表 hash解法 时间空间复杂度均为O(n) (3遍)
  */
 func hasCycle(head *ListNode) bool {
     hash := make(map[*ListNode]int)
@@ -17,7 +17,7 @@ func hasCycle(head *ListNode) bool {
 }
 
 /**
- * 141. 环形链表 快慢指针
+ * 141. 环形链表 快慢指针 时间复杂度为O(n)空间复杂度为O(1)
  */
 func hasCycle(head *ListNode) bool {
     slow,fast := head,head
@@ -32,3 +32,4 @@ func hasCycle(head *ListNode) bool {
 
     return false
 }
+

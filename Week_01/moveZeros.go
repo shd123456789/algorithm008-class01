@@ -1,23 +1,10 @@
-// 移动零
-func moveZeroes(nums []int)  { // 1遍
-    len := len(nums) - 1
-    if len <= 0 {
-        return
-    }
-
-    insertPose := 0;
-    for _,num := range nums {
-        if num != 0 {
-            nums[insertPose] = num 
-            insertPose ++
+// 移动零 3遍 时间复杂度为O(n)空间复杂度为O(1)
+func moveZeroes(nums []int)  {
+    insertPos := 0
+    for i := 0; i < len(nums); i++ {
+        if nums[i] != 0 {
+            nums[i],nums[insertPos] = 0,nums[i]
+            insertPos++
         }
-    } 
-
-    for {
-        if len < insertPose {
-            break
-        }
-        nums[insertPose] = 0;
-        insertPose ++
     }
 }

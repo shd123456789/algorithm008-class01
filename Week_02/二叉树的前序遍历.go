@@ -29,17 +29,27 @@ func helper(root *TreeNode, res *[]int) []int {
  * }
  */
 func preorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
     var res []int
-    var stack []*TreeNode
-    for len(stack) > 0 || root != nil {
-        for root != nil {
-            res = append(res, root.Val)
-            stack = append(stack, root.Right)
-            root = root.Left
+    stack := []*TreeNode{root}
+    for len(stack) != 0 {
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil {
+            if node.Right != nil {
+                stack = append(stack, node.Right)
+            }
+            if node.Left != nil {
+                stack = append(stack, node.Left)
+            }
+            stack = append(stack, node, nil) // nil作为表识符表示反问过了等后续加入结果集
+        } else {
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            res = append(res, node.Val)
         }
-        index := len(stack) - 1
-        root = stack[index]
-        stack = stack[:index]
     }
     return res
 }

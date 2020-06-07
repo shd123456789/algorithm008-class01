@@ -1,10 +1,4 @@
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+// 时间O(n) 空间O(1)
 func reversePrint(head *ListNode) []int {
     var res []int
     for  head != nil {

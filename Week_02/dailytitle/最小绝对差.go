@@ -1,3 +1,4 @@
+// 时间复杂度O(nlogn) 空间复杂度结果集不算O(1)
 func minimumAbsDifference(arr []int) [][]int {
     var res [][]int
     if len(arr) < 2 {

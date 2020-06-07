@@ -1,13 +1,19 @@
+// 时间复杂度O(n) 空间复杂度为O(1) 2遍
 func addDigits(num int) int {
-    tmp := 0
+    res := 0
     for num != 0 {
-       tmp += num %  10
-       if num /= 10; num == 0 {
-           num,tmp = tmp,0
-           if num < 10 {
-               break
-           }
-       }
+        res += num % 10
+        if num = num / 10; num == 0 {
+            if res < 10 {
+                break
+            }
+            num,res = res,0
+        }
     }
-    return num
+    return res
+}
+
+// O(1)
+func addDigits(num int) int {
+    return (num - 1) % 9 + 1
 }   

@@ -1,3 +1,5 @@
+
+// 时间复杂度O(n) 空间复杂度O(n) 2遍
 func wordPattern(pattern string, str string) bool {
     strArr := strings.Split(str," ")
     if len(pattern) != len(strArr) {

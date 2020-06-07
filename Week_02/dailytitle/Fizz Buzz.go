@@ -13,4 +13,14 @@ func fizzBuzz(n int) []string {
     }
     return res
 }
+   2 
+[1,2,3,4]
 
+n - i,
+n - i + 1
+
+1
+2
+4
+8
+16

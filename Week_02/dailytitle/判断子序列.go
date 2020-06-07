@@ -1,17 +1,13 @@
-
+// 时间复杂度O(n) 空间O(1) 2遍
 func isSubsequence(s string, t string) bool {
-    if s == "" {
-        return true
-    }
-    p := 0
-    for i:= 0; i < len(t); i++ {
-        if t[i] == s[p] {
-            if p = p+1; p == len(s) {
-                return true
-            }
+    i,j := 0,0
+    for j < len(s) && i < len(t) {
+        if s[j] == t[i] {
+            j++
         }
+        i++
     }
-    return false
+    return j == len(s)
 }
 
 // 当s很多需要判断时预处理t通过二分查找将时间复杂度降低
@@ -41,3 +37,4 @@ func isSubsequence(s string, t string) bool {
     }
     return true
 }
+

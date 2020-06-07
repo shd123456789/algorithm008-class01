@@ -1,11 +1,4 @@
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+// 时间O(n) 空间最坏O(n) 3遍
 func maxDepth(root *TreeNode) int {
     if root == nil {
         return 0

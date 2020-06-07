@@ -1,12 +1,13 @@
-// 数组加1
-func plusOne(digits []int) []int { 
-    len := len(digits) - 1
-    for i := len; i >=0; i-- {
-        v := digits[i] + 1
-        digits[i] = v % 10
-        if digits[i] != 0 {
+// 数组加1 时间空间最好情况为O（1）最坏为O(n) 3遍
+func plusOne(digits []int) []int {
+    for i := len(digits) - 1; i >= 0; i-- {
+        digits[i] = digits[i] + 1
+        if digits[i] == 10 {
+            digits[i] = 0
+        } else {
             return digits
         }
     }
-    return append([]int{1}, digits...) 
+    return append([]int{1}, digits...)
 }
+   

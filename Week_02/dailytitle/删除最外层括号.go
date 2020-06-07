@@ -1,4 +1,4 @@
-// 栈
+// 栈时间复杂度O(n) 空间复杂度O(n)
 func removeOuterParentheses(S string) string {
     var stack,res []byte
     for i := 0; i < len(S); i++ {
@@ -17,7 +17,7 @@ func removeOuterParentheses(S string) string {
     return string(res)
 }
 
-// 指针方法
+// 指针方法 // 栈时间复杂度O(n) 空间复杂度O(1)
 func removeOuterParentheses(S string) string {
     k := 0
     res := make([]rune, 0)

@@ -1,3 +1,4 @@
+// 空间O(n) 时间O(n)
 func getKthMagicNumber(k int) int {
     if k <= 0 {
         return 0

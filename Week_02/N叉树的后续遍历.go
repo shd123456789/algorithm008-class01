@@ -21,37 +21,26 @@ func helper(root *Node, res *[]int) []int {
     return *res
 }
 
-/**
- * Definition for a Node.
- * type Node struct {
- *     Val int
- *     Children []*Node
- * }
- */
-
+// 栈的实现
 func postorder(root *Node) []int {
     if root == nil {
         return nil
     }
-
-    type trackTreeNode struct{
-        visited bool
-        root *Node
-    }
     var res []int
-    var stack []*trackTreeNode
-    stack = append(stack, &trackTreeNode{root: root})
+    stack := []*Node{root}
     for len(stack) != 0 {
         node := stack[len(stack) - 1]
-        if node.visited {
-            res = append(res, node.root.Val)
+        stack = stack[:len(stack) - 1]
+        if node != nil {
+            stack = append(stack, node, nil) // nil作为表识符表示反问过了等后续加入结果集
+            for i := len(node.Children) - 1; i >= 0; i-- {
+                stack = append(stack, node.Children[i])
+            }
+        } else {
+            node = stack[len(stack) - 1]
             stack = stack[:len(stack) - 1]
-            continue
+            res = append(res, node.Val)
         }
-        for i := len(node.root.Children) - 1; i >= 0; i-- {
-            stack = append(stack, &trackTreeNode{root: node.root.Children[i]})
-        }
-        node.visited = true
     }
     return res
 }

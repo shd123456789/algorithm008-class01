@@ -19,28 +19,29 @@ func helper(root *TreeNode, res *[]int) []int {
     }
     return *res
 }
-// 遍历
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+// 遍历 2遍 //时间O(n)
 func inorderTraversal(root *TreeNode) []int {
+    if root == nil {
+        return nil
+    }
     var res []int
-    var stack []*TreeNode
-
-    for len(stack) > 0 || root != nil {
-        for root != nil {
-            stack = append(stack, root)
-            root = root.Left
+    stack := []*TreeNode{root}
+    for len(stack) != 0 {
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil {
+            if node.Right != nil {
+                stack = append(stack, node.Right)
+            }
+            stack = append(stack, node, nil) // nil作为表识符表示反问过了等后续加入结果集
+            if node.Left != nil {
+                stack = append(stack, node.Left)
+            }
+        } else {
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            res = append(res, node.Val)
         }
-        index := len(stack) - 1
-        res = append(res, stack[index].Val)
-        root = stack[index].Right
-        stack = stack[:index]
     }
     return res
 }

@@ -1,4 +1,4 @@
-// 简单方法
+// 简单方法 3遍
 func intersect(nums1 []int, nums2 []int) []int {
     hash := make(map[int]int)
     var res []int

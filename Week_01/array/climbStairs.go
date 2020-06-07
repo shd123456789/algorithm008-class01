@@ -1,4 +1,4 @@
-// 70. 爬楼梯 动态规划
+// 70. 爬楼梯 动态规划 时间复杂度为O(n) 空间为O(1)
 func climbStairs(n int) int {
     if n == 1 {
         return 1

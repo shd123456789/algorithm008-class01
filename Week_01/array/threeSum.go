@@ -1,4 +1,4 @@
-//15. 三数之和
+//15. 三数之和(3遍) 时间复杂度O(n^2)空间复杂度为O(1)(排除结果的空间)
 func threeSum(nums []int) [][]int {
     var results [][]int
     sort.Ints(nums)

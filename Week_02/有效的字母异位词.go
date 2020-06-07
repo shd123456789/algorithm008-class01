@@ -1,3 +1,4 @@
+// 时间O(N) 空间O(1)
 func isAnagram(s string, t string) bool {
     if len(s) != len(t) {
         return false

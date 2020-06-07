@@ -28,22 +28,25 @@ func helper(root *Node, res *[]int) []int {
  *     Children []*Node
  * }
  */
-
 func preorder(root *Node) []int {
     if root == nil {
         return nil
     }
     var res []int
-    var stack []*Node
-    stack = append(stack, root)
+    stack := []*Node{root}
     for len(stack) != 0 {
-        node := stack[len(stack) - 1] 
-        res = append(res, node.Val)
-        stack = stack[:len(stack) - 1] 
-        for i := len(node.Children) - 1; i >= 0; i-- {
-            stack = append(stack, node.Children[i])
+        node := stack[len(stack) - 1]
+        stack = stack[:len(stack) - 1]
+        if node != nil {
+            for i := len(node.Children) - 1; i >= 0; i-- {
+                stack = append(stack, node.Children[i])
+            }
+            stack = append(stack, node, nil) // nil作为表识符表示反问过了等后续加入结果集
+        } else {
+            node = stack[len(stack) - 1]
+            stack = stack[:len(stack) - 1]
+            res = append(res, node.Val)
         }
-    } 
+    }
     return res
 }
-

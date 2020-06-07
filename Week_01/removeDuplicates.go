@@ -1,19 +1,15 @@
-// 26. 删除排序数组中的重复项
-
+// 26. 删除排序数组中的重复项(2遍) 时间复杂度为O(n),空间复杂度为O(1)
 func removeDuplicates(nums []int) int {
-    len := len(nums)
-    if len == 0 {
+    if len(nums) == 0 {
         return 0
     }
-    tmp := nums[len - 1] + 1
     step := 0
-    for i := 0; i < len; i++ {
-        if tmp == nums[i] { // 当相等时记录移动的总步数
+    for i := 0; i < len(nums); i++ {
+        if nums[step] != nums[i] {
             step++
-        } else {
-            nums[i - step] = nums[i]
-            tmp = nums[i]
+            nums[step] = nums[i]
         }
     }
-    return len - step
+    return step + 1
 }
+    

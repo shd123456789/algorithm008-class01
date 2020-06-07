@@ -1,11 +1,4 @@
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
+// 时间O(n) 空间O(logn)
 func isBalanced(root *TreeNode) bool {
     return helper(root) != -1
 }
@@ -14,18 +7,18 @@ func helper(root *TreeNode) int {
     if root == nil {
         return 0
     }
-    leftHight := helper(root.Left)
-    if leftHight == -1 {
+    lh := helper(root.Left)
+    if lh == -1 {
         return -1
     }
-    rightHight := helper(root.Right)
-    if rightHight == -1 {
+    rh := helper(root.Right)
+    if rh == -1 {
         return -1
     }
-    if abs(leftHight - rightHight) >= 2 {
-        return - 1
+    if abs(lh - rh) >= 2 {
+        return -1
     }
-    return 1 + max(leftHight, rightHight)
+    return 1 + max(lh, rh)
 }
 
 func max(n1 int, n2 int) int {
@@ -43,3 +36,9 @@ func abs(n int) int {
         return -n
     }
 }
+
+【day38】
+
+https://leetcode-cn.com/problems/word-ladder/description/
+
+

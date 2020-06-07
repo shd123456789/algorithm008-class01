@@ -1,3 +1,4 @@
+// 时间O(n)n为2数长度较大的 空间如结果集不算就是O(1)
 func addStrings(num1 string, num2 string) string {
     l,l1,l2 := 0,len(num1),len(num2) 
     var res []byte

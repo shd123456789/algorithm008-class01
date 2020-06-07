@@ -19,7 +19,7 @@ func getHint(secret string, guess string) string {
     b = b - a
     return strconv.Itoa(a) + "A" + strconv.Itoa(b) + "B"
 }
-
+// 2遍 时间O(n) 空间O(1)
 func getHint(secret string, guess string) string {
     arr := make([]int, 10)
     bulls := 0

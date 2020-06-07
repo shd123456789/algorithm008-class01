@@ -1,4 +1,4 @@
-// 环形链表 II 寻找第环节点
+// 环形链表 II 寻找第环节点(2遍)
 func detectCycle(head *ListNode) *ListNode {
     fast,slow := head, head
     
